@@ -1,16 +1,19 @@
-# MyBankingApp 🏦
+# MyBankingApp
 
-A modern, enterprise-grade banking API built with **Clean Architecture**, **CQRS**, and **.NET 10**.
+A modern, full-stack banking application built with **Clean Architecture**, **CQRS**, **.NET 10**, and **React + TypeScript**.
 
 ## Technology Stack
 
 | Layer | Technology |
 |-------|------------|
-| **Runtime** | .NET 10 |
-| **Web Framework** | ASP.NET Core Web API |
+| **Backend Runtime** | .NET 10 |
+| **Backend Framework** | ASP.NET Core Web API |
 | **Architecture** | Clean Architecture + CQRS |
 | **ORM** | Entity Framework Core |
 | **Database** | SQLite (dev) / SQL Server (prod) |
+| **Frontend** | React 19 + TypeScript + Vite |
+| **Styling** | Tailwind CSS |
+| **State Management** | React Context + TanStack Query |
 | **Logging** | Serilog |
 | **Testing** | xUnit + FluentAssertions + Moq |
 | **API Docs** | Scalar (OpenAPI) |
@@ -24,6 +27,13 @@ MyBankingApp/
 │   ├── MyBankingApp.Application/    # Use cases, CQRS commands/queries
 │   ├── MyBankingApp.Infrastructure/ # EF Core, repositories, external services
 │   └── MyBankingApp.API/            # Controllers, middleware, DI
+├── client/                          # React frontend
+│   ├── src/
+│   │   ├── components/              # Reusable UI components
+│   │   ├── pages/                   # Dashboard, Login, Register, Transfer
+│   │   ├── context/                 # User authentication context
+│   │   └── services/                # API client
+│   └── package.json
 └── tests/
     ├── MyBankingApp.Domain.Tests/
     ├── MyBankingApp.Application.Tests/
@@ -34,19 +44,30 @@ MyBankingApp/
 
 ### Prerequisites
 - [.NET 10 SDK](https://dotnet.microsoft.com/download)
+- [Node.js 18+](https://nodejs.org/)
 
-### Run the API
+## Run the API
 ```bash
 cd MyBankingApp
 dotnet restore
 dotnet build
 dotnet run --project src/MyBankingApp.API
 ```
+#backend will be available on http://localhost:5114/scalar/v1
 
-### View API Documentation
+## Run the Client
+```bash
+to run client:
+cd MyBankingApp/client
+npm install && npm run dev
+```
+#client will be available on http://localhost:5173/
+
+
+## View API Documentation
 Navigate to: `http://localhost:5114/scalar/v1`
 
-### Run Tests
+## Run Tests
 ```bash
 dotnet test
 ```
@@ -117,5 +138,3 @@ public record Money(decimal Amount, string Currency = "USD")
 ## License
 
 MIT
-# MyBankingApp
-# MyBankingApp
