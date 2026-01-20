@@ -1,5 +1,5 @@
 # MyBankingApp
-# Demo: Demo: https://www.youtube.com/watch?v=4wIPxtGRTtM
+# Demo: https://www.youtube.com/watch?v=4wIPxtGRTtM
 
 A modern, full-stack banking application built with **Clean Architecture**, **CQRS**, **.NET 10**, and **React + TypeScript**.
 
